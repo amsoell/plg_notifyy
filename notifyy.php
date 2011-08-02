@@ -12,7 +12,7 @@ class plgContentNotifyy extends JPlugin {
         parent::__construct( $subject, $params );
     }
     
-    function onContentAfterSave( &$article, $isNew ) {
+    function onContentAfterSave($context, &$article, $isNew ) {
         global $mainframe;
         
         if ($isNew) {
