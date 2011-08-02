@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="content">
+	<name>Content - Notifyy</name>
+	<author>Andy Soell</author>
+	<creationDate>August 1, 2011</creationDate>
+	<copyright>Copyright (C) 2011 The Genteel</copyright>
+	<authorEmail>andy@teamsoell.com</authorEmail>
+	<authorUrl>http://andy.teamsoell.com</authorUrl>
+	<version>1.0</version>
+	<description>Notification for new articles</description>
+	<files>
+		<filename plugin="notifyy">notifyy.php</filename>
+	</files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="recipients" type="usergroup" description="Users to contact on new article creation" label="Notification list" size="8" multiple="true" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
+
+
