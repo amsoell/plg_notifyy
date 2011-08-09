@@ -14,10 +14,14 @@ class plgContentNotifyy extends JPlugin {
     
     function onContentAfterSave($context, &$article, $isNew ) {
         global $mainframe;
+
+        $groups = implode(',',array_values($this->params->get("recipients")));
+        $types  = implode(',',array_values($this->params->get("components")));
+
         
-        if ($isNew) {
+        if ($isNew && (in_array($context, $types))) {
             $db		=& JFactory::getDBO();
-            $groups = implode(',',array_values($this->params->get("recipients")));
+            
             $query  = $db->getQuery(true);
             $query->select('user.email as email');
             $query->from('#__users as user INNER JOIN #__user_usergroup_map as usergroup ON user.id=usergroup.user_id');

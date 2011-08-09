@@ -16,7 +16,13 @@
             <fieldset name="basic">
                 <field name="recipients" type="usergroup" description="Users to contact on new article creation" label="Notification list" size="8" multiple="true" />
                 <field name="subject" type="text" description="Subject line of message" label="Subject" default="A new article has been created" />
-                <field name="message" type="editor" description="Message to include in the email notification" label="Message" width="300" filter="safehtml" />
+                <field name="message" type="textarea" description="Message to include in the email notification" label="Message" width="300" filter="safehtml" />
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="components" type="list" default="com_content.article" description="Components to notify on" label="Components" multiple="true" size="6">
+                    <option value="com_content.article">Articles</option>
+                    <option value="com_categories.category">Categories</option>
+                </field>
             </fieldset>
         </fields>
     </config>
