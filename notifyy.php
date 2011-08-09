@@ -16,7 +16,7 @@ class plgContentNotifyy extends JPlugin {
         global $mainframe;
 
         $groups = implode(',',array_values($this->params->get("recipients")));
-        $types  = implode(',',array_values($this->params->get("components")));
+        $types  = array_values($this->params->get("components"));
 
         
         if ($isNew && (in_array($context, $types))) {
